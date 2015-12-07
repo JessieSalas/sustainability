@@ -1,7 +1,7 @@
 #Main interface loop for Cal Sustainability education platform
 import unirest
 import time
-
+from upload import cloudUpload
 class ImageRecognizer:
     """
     Recognizes objects in images
@@ -126,8 +126,11 @@ if __name__ == "__main__":
 
     test_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Ursus_arctos_-_Norway.jpg/800px-Ursus_arctos_-_Norway.jpg"
     test_file = "./media/img/bear.jpg"
-        
+
+    cloud_url = cloudUpload(test_file)    
     I = ImageRecognizer(CAMFIND_API_KEY)
+    print("Testing url image recognition")
+    I.recognizeImage(cloud_url, url=True)
     """
     #TESTS
     print("Testing url image recognition")
