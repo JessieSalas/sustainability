@@ -11,8 +11,12 @@ def cloudUpload(localfile):
     
     cloudinary.config( cloud_name = "dkljngqnl", api_key = "495869372656521", api_secret = "trdnXjXXQVo9LDdpawK0b8W0s7c" )
 
-    b = cloudinary.uploader.upload(localfile)
+    b = cloudinary.uploader.upload(img)
 
     hosted_url = b["secure_url"]
     return hosted_url
 
+if __name__ == "__main__":
+
+    img = "./media/img/bear.jpg"
+    cloudUpload(img)
